@@ -22,7 +22,7 @@
 
 <div align="center">
   
-![Captura de pantalla del proyecto](../assets/image.png)
+![Captura de pantalla del proyecto](./assets/image.png)
 
 *Interfaz principal de la aplicación*
 
