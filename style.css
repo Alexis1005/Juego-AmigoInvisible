@@ -92,6 +92,7 @@ body {
     justify-content: center;
 }
 
+
 /* Estilos de entrada de texto */
 .input-title {
     flex: 1;
@@ -125,6 +126,18 @@ button {
     background-color: #a1a1a1;
 }
 
+.boton__eliminar{
+    border: none;
+    border-radius: 100%;
+    padding: 2.5px 5px;
+    background-color: var(--color-secondary);
+    color: red;
+    font-weight: 600;
+    box-shadow: none;
+    margin-left: 1rem;
+    font-size: 1.3rem;
+}
+
 /* Listas */
 ul {
     list-style-type: none;
@@ -136,7 +149,7 @@ ul {
 
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: #2a72dd;
     font-size: 22px;
     font-weight: bold;
     text-align: center;

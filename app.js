@@ -1,15 +1,38 @@
 let amigos = [];
 
+//funcion para normalizar el nombre a agregar
+function normalizarNombre(params) {
+  let textoIngresado = document.getElementById("amigo").value;
+  let textoNormalizado = textoIngresado
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ");
+  return textoNormalizado;
+}
+
 //función para agregar amigos
 function agregarAmigo(params) {
+  //capturo texto original
   let capturaTexto = document.getElementById("amigo").value;
+  //normalizo con la funcion
+  let textoNormalizado = normalizarNombre();
+  //normalizo los amigos ya agregados
+  let amigosNormalizados = amigos.map((nombre) =>
+    nombre.trim().toLowerCase().replace(/\s+/g, " ")
+  );
 
-  if (capturaTexto != "") {
-    amigos.push(capturaTexto);
-    limpiarCasilla();
-    actualizarLista();
+  if (textoNormalizado !== "") {
+    if (amigosNormalizados.includes(textoNormalizado)) {
+      alert("Ya existe ese nombre en la lista!");
+      return;
+    } else {
+      amigos.push(capturaTexto);
+      limpiarCasilla();
+      actualizarLista();
+    }
   } else {
     alert("Debe ingresar un nombre!");
+    return;
   }
 }
 
@@ -24,8 +47,9 @@ function actualizarLista(params) {
   lista.innerHTML = "";
 
   for (let nombre of amigos) {
-    lista.innerHTML += `<li>${nombre}</li>`;
+    lista.innerHTML += `<li>${nombre} <button class="boton__eliminar" onclick="eliminarAmigo(this)">x</button></li>`; 
   }
+  return;
 }
 
 //___________________________________________________________________________
@@ -41,4 +65,21 @@ function sortearAmigo(params) {
     let sorteo = document.getElementById("resultado");
     sorteo.innerHTML = `<li>${nombreSorteado}</li>`;
   }
+  actualizarLista();
 }
+
+//eliminaAmigocreado
+function eliminarAmigo(boton) {
+  //busco el li que contiene el boton
+  const li = boton.parentElement;
+  const nombre = li.firstChild.textContent;
+  //elimina del DOM
+  li.remove()
+
+  //elimina del array
+  const indice = amigos.indexOf(nombre);
+  amigos.splice(indice,1);
+
+}
+
+
