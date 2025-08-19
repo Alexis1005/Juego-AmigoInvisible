@@ -17,7 +17,7 @@
 - 👥 **Gestión de Amigos**: Agregar nombres fácilmente a tu lista
 - 🎯 **Sorteo Aleatorio**: Selección imparcial de un amigo al azar
 - 🧹 **Validación Inteligente**: Previene nombres vacíos y duplicados
-- 🗑️ ** Eliminar amigo**: Opción para eliminar amigo agregado
+- 🗑️ **Eliminar amigo**: Opción para eliminar amigo agregado
 
 ## 🖥️ Vista Previa
 
